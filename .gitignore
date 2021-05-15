@@ -142,3 +142,7 @@ dmypy.json
 
 # Files
 model.png
+
+# Folders
+tb_logs
+weights
