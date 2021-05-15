@@ -20,7 +20,7 @@ def VGG16_1(shape=(224, 224, 3), classes=1000):
         classes (int, optional): Number of Classes. Defaults to 1000.
 
     Returns:
-        tf.Keras.models.Model: VGG11 Model
+        tf.Keras.models.Model: VGG16 Model
     """
 
     # Input Layer

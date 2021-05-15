@@ -8,19 +8,19 @@ import tensorflow as tf
 from .utils import conv3_unit, conv1_unit, maxpool_unit, flatten_unit, fc_unit, fc_final
 
 
-def VGG13(shape=(224, 224, 3), classes=1000):
+def VGG19(shape=(224, 224, 3), classes=1000):
     """
-    VGG13 Model Architecture
+    VGG19 Model Architecture
 
     VGGNet Architecture A Implementation
-    13 Layers Deep - 10 Conv + 3 FC Layers
+    19 Layers Deep - 16 Conv + 3 FC Layers
 
     Args:
         shape (tuple, optional): Input Image Shape. Defaults to (224, 224, 3).
         classes (int, optional): Number of Classes. Defaults to 1000.
 
     Returns:
-        tf.Keras.models.Model: VGG13 Model
+        tf.Keras.models.Model: VGG19 Model
     """
 
     # Input Layer
@@ -39,14 +39,20 @@ def VGG13(shape=(224, 224, 3), classes=1000):
     # Block 3
     hidden = conv3_unit(256, hidden)
     hidden = conv3_unit(256, hidden)
+    hidden = conv3_unit(256, hidden)
+    hidden = conv3_unit(256, hidden)
     hidden = maxpool_unit(hidden)
 
     # Block 4
     hidden = conv3_unit(512, hidden)
     hidden = conv3_unit(512, hidden)
+    hidden = conv3_unit(512, hidden)
+    hidden = conv3_unit(512, hidden)
     hidden = maxpool_unit(hidden)
 
     # Block 5
+    hidden = conv3_unit(512, hidden)
+    hidden = conv3_unit(512, hidden)
     hidden = conv3_unit(512, hidden)
     hidden = conv3_unit(512, hidden)
     hidden = maxpool_unit(hidden)
