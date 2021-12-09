@@ -28,7 +28,7 @@ def VGG13(shape=(224, 224, 3), classes=1000):
 
     # Block 1
     hidden = conv3_unit(64, inputs)
-    hidden = conv3_unit(64, inputs)
+    hidden = conv3_unit(64, hidden)
     hidden = maxpool_unit(hidden)
 
     # Block 2
